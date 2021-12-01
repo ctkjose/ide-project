@@ -1,9 +1,8 @@
 {
 	"name": "ide-project",
-	"description": "EXW IDE Projects adds makes working with projects nicers!",
-	"main": "./lib/ide-project",
-	"version": "0.0.1",
 	"description": "IDE helpers for web development with PHP-JS-HTML",
+	"main": "./lib/ide-project",
+	"version": "0.1.0",
 	"keywords": [
 		"symbols",
 		"nst",
@@ -17,22 +16,23 @@
 	"deserializers": {
 		"prjPanelRestore": "prjPanelRestore"
 	},
-	"activationCommands": {
-
-	},
+	"activationCommands": {},
 	"repository": "https://github.com/ctkjose/ide-project",
 	"license": "MIT",
 	"engines": {
 		"atom": ">=1.0.0 <2.0.0"
 	},
-	"dependencies": {
-	},
+	"dependencies": {},
 	"consumedServices": {
 		"console": {
-			"versions": { ">=0.1.0": "consumeConsole"}
+			"versions": {
+				">=0.1.0": "consumeConsole"
+			}
 		},
 		"atom-ide-busy-signal": {
-		    "versions": { "*": "consumeSignal"}
-  		}
+			"versions": {
+				"*": "consumeSignal"
+			}
+		}
 	}
 }
