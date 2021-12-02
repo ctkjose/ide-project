@@ -2,7 +2,7 @@
 	"name": "ide-project",
 	"description": "IDE helpers for web development with PHP-JS-HTML",
 	"main": "./lib/ide-project",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"keywords": [
 		"symbols",
 		"nst",
