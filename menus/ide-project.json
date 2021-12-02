@@ -21,7 +21,8 @@
 				{"label": "Open Project...","command": "exw-ide:open-project"},
 				{"label": "Save Project...","command": "exw-ide:save-project"},
 				{"label": "Edit symbol's grammer", "command": "exw-ide:edit-sym-grammer"},
-				{"label": "Edit config file", "command": "exw-ide:edit-config-file"}
+				{"label": "Edit config file", "command": "exw-ide:edit-config-file"},
+				{"label": "Reload tools", "command": "exw-ide:reload-tools"}
 			]}
 		]}
 	]

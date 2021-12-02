@@ -1,0 +1,45 @@
+{
+	"globals": [
+		"Array", "ArrayBuffer","Atomics","BigInt","BigInt64Array","BigUint64Array",
+		"Boolean","DataView","Date","Error","EvalError","Float32Array","Float64Array",
+		"Function","Infinity","Int16Array","Int32Array","Int8Array","Intl",
+		"JSON","Map","Math","NaN","Number","Object","Promise","Proxy","RangeError",
+		"ReferenceError","Reflect","RegExp","Set","SharedArrayBuffer","String",
+		"Symbol","SyntaxError","TypeError","URIError","Uint16Array","Uint32Array",
+		"Uint8Array","Uint8ClampedArray","WeakMap","WeakSet","WebAssembly",
+		"decodeURI","decodeURIComponent","encodeURI","encodeURIComponent",
+		"eval","globalThis","import","isFinite","isNaN","parseFloat","parseInt",
+		"undefined"
+	],
+	"globals_browser": [
+		"DOMException", "Event", "EventTarget", "clearInterval", "console", "AbortController", "Buffer",
+		"setInterval", "setTimeout", "URL",  "URLSearchParams", "MessageEvent",
+		"importScripts",
+		"window", "DocumentType", "Element", "FormData", "FileReader", "document", "fetch", "localStorage", "sessionStorage", "location", "navigator", "indexedDb",
+		"alert", "confirm", "console", "prompt"
+	],
+	"globals_user": [
+
+	],
+	"options": {
+		"no_tabs": false,
+		"no_long_lines": false,
+		"no_irregular_whitespace": false,
+		"no_floating_decimal": true,
+		"browser": true,
+		"eval": true,
+		"white": true,
+		"onevar": true,
+		"undef": true,
+		"newcap": true,
+		"nomen": true,
+		"regexp": true,
+		"plusplus": true,
+		"bitwise": true,
+		"maxerr": 50,
+		"indent": 4,
+		"for": true,
+		"single": true,
+		"indent2": false
+	}
+}

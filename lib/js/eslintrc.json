@@ -1,0 +1,42 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+
+  "env": {
+    "es6": true,
+    "node": true
+  },
+
+  "plugins": [
+    "import",
+    "node",
+    "promise",
+    "standard"
+  ],
+
+  "globals": {
+    "document": "readonly",
+    "navigator": "readonly",
+    "window": "readonly"
+  },
+
+  "rules": {
+	"getter-return": "error",
+	"no-await-in-loop": "error",
+	"no-cond-assign": "error",
+	"no-const-assign": "error",
+	"no-constructor-return": "error",
+	"no-dupe-args": "error",
+	"no-dupe-class-members": "error",
+	"no-dupe-else-if": "error",
+	"no-dupe-keys": "error",
+	"no-duplicate-case": "error",
+	"no-func-assign": "error",
+	"valid-typeof": "error"
+  }
+}

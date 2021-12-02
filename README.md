@@ -4,6 +4,12 @@ This package adds features to improve PHP development in ATOM.
 
 ![A screenshot of your package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)
 
+## Dependancies ##
+
+This package requires the following packages to be installed:
+
+[atom-ide-ui](https://atom.io/packages/atom-ide-ui)<br>
+
 
 ## Panels ##
 
@@ -21,9 +27,13 @@ Toggle bookmarks to parts of your code with `CTRL-SHIFT-8`.
 
 > The command `exw-ide:show-explorer` displays the Explorer Panel where bookmarks are listed.
 
-### PHP Autocomplete ###
+### Language Support ###
 
-Adds autocomplete to PHP scripts.
+PHP scripts get autocomplete and a linter.
+
+ESLINT is implemented as a linter for javascript code. This linter does not impose any particular code style or standard.
+
+>
 
 ### Symbol Tree ###
 

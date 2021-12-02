@@ -22,16 +22,18 @@
 	"engines": {
 		"atom": ">=1.0.0 <2.0.0"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"eslint": "^8.3.0"
+	},
 	"consumedServices": {
 		"console": {
 			"versions": {
-				">=0.1.0": "consumeConsole"
+				"*": "consumeConsole"
 			}
 		},
 		"atom-ide-busy-signal": {
 			"versions": {
-				"*": "consumeSignal"
+				"*": "consumeBusySignal"
 			}
 		}
 	}
