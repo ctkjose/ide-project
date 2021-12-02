@@ -19,15 +19,17 @@ A new Explorer Panel is added to access the source tree (symbols), bookmarks and
 
 > The command `exw-ide:show-explorer` displays the Explorer Panel where symbols, bookmarks and others are displayed.
 
-### Bookmarks ###
+## Bookmarks ##
 
-Toggle bookmarks to parts of your code with `CTRL-SHIFT-8`.
+Toggle bookmarks to parts of your code with `CTRL-ALT-8` and press `CTRL-8` to cycle thru your bookmarks.
 
-> Use the commands `exw-ide:toggle-bookmark`, `exw-ide:jump-to-next-bookmark` when configuring your own Keymaps.
+Use the commands `exw-ide:toggle-bookmark`, `exw-ide:jump-to-next-bookmark` when configuring your own Keybindings.
 
-> The command `exw-ide:show-explorer` displays the Explorer Panel where bookmarks are listed.
+> HINT: Disable Github keybindings to remove keymap conflicts.
 
-### Language Support ###
+The command `exw-ide:show-explorer` displays the Explorer Panel where bookmarks are listed.
+
+## Language Support ##
 
 PHP scripts get autocomplete and a linter.
 
@@ -35,11 +37,11 @@ ESLINT is implemented as a linter for javascript code. This linter does not impo
 
 >
 
-### Symbol Tree ###
+## Symbol Tree ##
 
-The Symbol Tree displays code symbols (functions, objects, etc) found in your source code.
+A new Symbol Tree that displays code symbols (functions, objects, etc) found in your source code.
 
-The Symbol Tree uses a grammar definition that can easily be modified to accommodate your needs. The first time this package is used a default grammar is placed in the file `~/.atom/exc_sym_grammer.js`. Open this file to make your modifications and relaunch Atom.
+The Symbol Tree uses a grammar definition that can easily be modified to accommodate your needs. The first time this package is used a default grammar is placed in the file `~/.atom/exw_ide_sym_grammer.js`. Open this file to make your modifications and relaunch Atom.
 
 > The command `exw-ide:show-explorer` displays the Explorer Panel where symbols are displayed.
 
@@ -58,9 +60,9 @@ Markers use the syntax of single line comments for the given source code languag
 /* #MARK My comment here... */
 ```
 
-### Configuration ###
+## Configuration ##
 
-The file `exc_config_store.json` stores more advance configurations not available in settings. This file is found in your `~/.atom` folder.
+The file `exw_ide_config_store.json` stores more advance configurations not available in settings. This file is found in your `~/.atom` folder.
 
 Available keys:
 
@@ -70,11 +72,17 @@ Available keys:
 
 This configuration file can also be used to add configuration keys for your user tools.
 
-### User Tools ###
+## User Tools ##
 
-You can add your own costume tool scripts to the Project Panel. A tool script executes miscellaneous code.
+You can create your own tool scripts written in plain javascript to automate actions or add extra functionality.
 
-Tool scripts are JS scripts that you place in the folder `~/atom/exw-ide-tools/` and add an action that will be listed in the Tools menu of the project panel.
+Tool scripts are plain JS scripts that you place in the folder `~/atom/exw-ide-tools/`. The tool scripts are available in the Project Panel for easy access.
+
+> Run the command `exw-ide:reload-tools` in Atom's Command Palette to reload changes you make to your tool scripts or close and reload Atom.
+
+### Writing a tool script ###
+
+A tool is a plain object that defines a `title` for the script and the corresponding action on a function `onAction`:
 
 ```js
 tool = {
@@ -95,9 +103,13 @@ tool = {
 }
 ```
 
-The tool script creates a `tool` object with the definition of your tool command. The 'onAction' property is the function where you place the code to be executed when the action is invoked.
+The tool script creates a `tool` object with the definition of your tool command. The `onAction` property is the function where you place the code to be executed when the action is invoked.
 
-Tools have a helper object `ide` that makes it easier to write tools without having to learn all of the Atoms internals.
+You can also define an `onSave` function that will be executed whenever an editor file is saved.
+
+Inside an action function the modules `atom`, `fs`, `path`, `console` are already ready loaded and available for your use.
+
+Also a helper object `ide` is available. The `ide` object provides makes it easier to write tools without having to learn all of the Atoms internals.
 
 ```js
 
@@ -129,9 +141,16 @@ let title = ide.editor.getTitle();
 let filePath = ide.editor.getPath();
 let filename = ide.editor.getFileName();
 
+
+//Replaces the entire contents of the buffer with the given String
 ide.editor.setValue(text);
+
+//For each selection, replace the selected text with the given text.
 ide.editor.insertText(aString, opIsSelected);
 
-```
 
-Other objects exposed to tools are `atom`, `fs`, `path`, `console`.
+//Get instance of Atom's TextEditor
+//https://flight-manual.atom.io/api/v1.57.0/TextEditor/
+let textEditor = ide.editor.getTextEditor();
+
+```

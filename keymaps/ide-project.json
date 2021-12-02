@@ -3,19 +3,17 @@
 		"ctrl-alt-p": "ide-project:toggle",
 		"ctrl-alt-s": "ide-project:save-project",
 		"ctrl-alt-o": "ide-project:open-project",
-		"ctrl-r": "exw-ide:show-symbols",
 		"ctrl-shift-t": "exw-ide:toggle-terminal",
 		"cmd-ctrl-o": "exw-ide:show-open-tabs"
 	},
 	".platform-darwin atom-workspace":{
-		"cmd-r": "exw-ide:show-symbols",
 		"ctrl-shift-t": "exw-ide:toggle-terminal",
 		"cmd-ctrl-o": "exw-ide:show-open-tabs"
 	},
 	"atom-text-editor": {
-		"ctrl-8":"exw-ide:jump-to-next-bookmark",
-		"ctrl-shift-8": "exw-ide:toggle-terminal",
-		"ctrl-r": "exw-ide:show-symbols"
+		"ctrl-r": "exw-ide:show-symbols",
+		"ctrl-8": "exw-ide:jump-to-next-bookmark",
+		"ctrl-alt-8": "exw-ide:toggle-bookmark"
 	},
 	".platform-darwin atom-text-editor": {
 		"cmd-r": "exw-ide:show-symbols"
